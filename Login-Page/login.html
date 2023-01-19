@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-    <div class="login-card" >
+    <div class="login-card" style="margin-left: 40%;" >
       <h2><img src="log.png" ></h2>
       <h3>Enter your credentials</h3>
       <form class="login-form" action="#" method="post">
@@ -14,10 +14,8 @@
         id="username">
         <input type="password" placeholder="Password" 
         id="password">
-        <a href="#" class="register" style="color: rgba(0, 0, 0, 0.38);"> Register Here </a>
-        <input class="Login" 
-        type="submit" value="SignIn"
-        onclick="validate()">
+        <button class="register" onclick="validate()">Register-Here</button>
+        <button class="signin" onclick="validate()">Sign-In</button>
       </form>
     </div>
   </body>

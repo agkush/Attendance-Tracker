@@ -81,7 +81,9 @@
 #second h2{
   margin: 50px;
 }
-
+#second .btn a{
+text-decoration: none;
+}
 
 /* working section */
 #working {
@@ -129,6 +131,7 @@ border-radius:15px ;
 .footer-copyright {
   text-align: center;
 }
+
 .exp {
   color: blue;
 }
