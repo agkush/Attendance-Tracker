@@ -1,0 +1,102 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+/* header  */
+#header{
+    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRh5TXdLQk1QJF_UI7hnC7aI50Nn-bUrmAZJA&usqp=CAU');
+    height: 70vh;
+    background-size:cover ;
+    background-position: center;
+}
+
+.navbar-nav li a{
+    float: right!important;
+    color: #fff!important;
+    text-shadow: 1px 1px 5px #000;
+    margin-right: 20px;
+}
+.navbar-brand img{
+    border-radius: 100%;
+    width: 50px;
+    margin-top: 30px;
+    margin-top: 10px;
+   
+}
+.element{
+    margin-left: 60%;
+}
+.navbar-toggler{
+    margin-right: 20px;
+    color: #000;
+    border: none!important;
+    outline: none!important;
+}
+.navbar-toggler .awes{
+    font-size: 26px;
+}
+
+/* welcome section  */
+
+.welcome{
+    padding: 50px 80px;
+    margin: -140px;
+    background-color: #fff;
+    box-shadow: 0 0 20px 7px rgba(0,0,0,0.2);
+    border-radius: 200px 200px 20px 20px;
+    z-index: 1;
+}
+
+.welcome h1{
+    font-size: 40px;
+    color: #505050;
+    font-weight: 700;   
+}
+
+.welcome p{
+    font-size: 18px;
+    color: #6b6b6b;
+}
+
+.welcome .read-more{
+    margin-top: 10px;
+    padding: 10px 30px;
+
+}
+.welcome .btn:focus {
+    box-shadow: none;
+}
+
+/* features */
+#features{
+    margin-top: -50;
+    padding: 20% 15%;
+    background-color: #fff;
+    position: relative;
+    z-index: -1;
+   }
+   .features-box{
+       text-align: center;
+       padding: 5%;
+       /* letter-spacing: 1px; */
+    }
+   
+    /* .icon{
+       color: #ef8172;
+       margin-bottom: 1rem;
+    }
+    .icon:hover{
+       color:#280684 ;
+    } */
+ 
+    /* footer  */
+
+    .footer-copyright{
+        text-align: center;
+    }
+    .exp:hover{
+         font-size: 30px;
+         font-weight: bolder;
+    }
