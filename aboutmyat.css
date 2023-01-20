@@ -1,0 +1,16 @@
+.heading{
+    text-align: center;
+    display: flex;
+    margin-left: 20%;
+    color:rgb(223, 232, 132);
+    font-family: 'Merriweather', serif;
+}
+.head{
+    color: white;
+}
+.content{
+    font-size: larger;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 10%;
+    margin-top: 4%;
+}
