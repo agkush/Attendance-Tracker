@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="css/register_style.css">
+    <title>Register</title>
+</head>
+<body>
+ <div class="wrapper">
+    <nav class="nav">
+        <div class="nav-logo">
+            <p>MyAttendenceTracker</p>
+        </div>
+        <div class="nav-button">
+            <a href="/login">
+                <button class="btn white-btn" id="loginBtn">Log In</button>
+            </a>
+            <button class="btn" id="registerBtn">Sign Up</button>
+        </div>
+    </nav>
+
+<!----------------------------- Form box ----------------------------------->    
+    <div class="form-box">
+        
+        <!------------------- login form -------------------------->
+        <div class="login-container" id="login"></div>
+        <!------------------- login form -------------------------->
+
+
+
+
+        <!------------------- registration form -------------------------->
+        <div class="login-container" id="login">
+            <div class="top">
+                <header>Sign Up</header>
+            </div>
+            <form action="/register" method="POST">
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Firstname" name="firstname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="text" class="input-field" placeholder="Lastname" name="lastname">
+                        <i class="bx bx-user"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="text" class="input-field" placeholder="Email" name="email">
+                    <i class="bx bx-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" minlength="10" maxlength="10" class="input-field" placeholder="Phone No." name="phone">
+                    <i class="bx bx-phone"></i>
+                </div>
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="number" class="input-field" placeholder="Number of Subjects" name="subjects">
+                        <i class="bx bx-pen"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="number" class="input-field" placeholder="Roll Number" name="rollnumber">
+                        <i class="bx bx-pen"></i>
+                    </div>
+                </div>
+                <div class="two-forms">
+                    <div class="input-box">
+                        <input type="password" class="input-field" placeholder="Password" name="password">
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" class="input-field" placeholder="Confirm Password" name="confirmpassword">
+                        <i class="bx bx-lock-alt"></i>
+                    </div>
+                </div>
+                <div class="input-box">
+                    <input type="submit" class="submit" value="Register">
+                </div>
+            </form>
+            <div class="two-col">
+                <div class="one">
+                    <input type="checkbox" id="register-check">
+                    <label for="register-check"> Remember Me</label>
+                </div>
+                <div class="two">
+                    <label><a href="#">Terms & conditions</a></label>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
+</body>
+</html>
