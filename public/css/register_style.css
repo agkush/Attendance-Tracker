@@ -10,14 +10,14 @@ body{
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 .wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 110vh;
-    background: rgba(39, 39, 39, 0.4);
+    /* background: rgba(39, 39, 39, 0.4); */
 }
 .nav{
     position: fixed;
@@ -27,7 +27,7 @@ body{
     width: 100%;
     height: 100px;
     line-height: 100px;
-    background: linear-gradient(rgba(39,39,39, 0.6), transparent);
+    /* background: linear-gradient(rgba(39,39,39, 0.6), transparent); */
     z-index: 100;
 }
 .nav-logo p{
@@ -78,12 +78,12 @@ body{
 }
 .form-box{
     position: relative;
-    display: flex;
+    /* display: flex; */
     align-items: center;
     justify-content: center;
     width: 512px;
     height: 600px;
-    overflow: hidden;
+    /* overflow: hidden; */
     z-index: 2;
 }
 .login-container{
@@ -147,6 +147,9 @@ header{
     top: -35px;
     left: 17px;
     color: #fff;
+}
+.hidden{
+    display:none;
 }
 .submit{
     font-size: 15px;
