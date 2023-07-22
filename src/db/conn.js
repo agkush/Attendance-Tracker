@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://0.0.0.0:27017/attendenceRegistrationForm", {
+mongoose.connect("mongodb+srv://agkush:12112194kush@cluster0.7xualb3.mongodb.net/?retryWrites=true&w=majority", {
     //useNewUrlParser: true,
 }).then(() => {
     console.log(`Connection successful`);

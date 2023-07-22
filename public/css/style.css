@@ -47,7 +47,7 @@
 }
 
 .middle h1 {
-  font-size: 3.5rem
+  font-size: 3.5rem;
 }
 
 .wave {
@@ -55,41 +55,44 @@
   bottom: -1px;
 }
 /* second section */
-#second .row{
-  background: linear-gradient(rgba(190,185,215,0.02),rgba(190,185,215,255),rgba(190,185,215,0.02));
+#second .row {
+  background: linear-gradient(
+    rgba(190, 185, 215, 0.02),
+    rgba(190, 185, 215, 255),
+    rgba(190, 185, 215, 0.02)
+  );
 }
-.track-title{
-
-  margin-top: 10% ;
+.track-title {
+  margin-top: 10%;
 }
-#second img{
+#second img {
   width: 100%;
   position: relative;
   left: 10%;
 }
-#second button{
+#second button {
   background-color: #f69767;
 }
-#second button:hover{
+#second button:hover {
   background-color: #f27430;
 }
 
-.shadow-div{
+.shadow-div {
   /* box-shadow: 0 0 1px 3px #c0bbdb; */
   text-shadow: 4px 4px 10px #beb9d7;
 }
-#second h2{
+#second h2 {
   margin: 50px;
 }
-#second .btn a{
-text-decoration: none;
+#second .btn a {
+  text-decoration: none;
 }
 
 /* working section */
 #working {
   display: flex;
-  justify-content: center; 
-   align-items: center;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 20px;
 }
 .icons {
@@ -103,19 +106,18 @@ text-decoration: none;
   color: #453f6b;
 }
 .wavy {
-   
-    position: absolute;
-    bottom:0;
-    left:0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
-.expert{
+.expert {
   margin-left: 10%;
   /* margin-right: %; */
 }
 
-.imp{
-height: 50vh;
-border-radius:15px ;
+.imp {
+  height: 50vh;
+  border-radius: 15px;
 }
 
 .imp h4 {

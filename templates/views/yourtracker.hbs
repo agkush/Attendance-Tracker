@@ -1,13 +1,250 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Tracker</title>
-</head>
-<body>
-    <h1>Ab yaha tumko subject names lena hai database me store karne hai aur saare subject ke counters banane hai aur thodi calculations hai to find the attendence percentage </h1>
 
-    <h1>aur ek logout button bhi banana hai which takes you to the home page.</h1>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/67fb82ae69.js" crossorigin="anonymous"></script>
+
+  <!-- font awesome -->
+  <script src="https://kit.fontawesome.com/67fb82ae69.js" crossorigin="anonymous"></script>
+
+  <!-- bootstrap  -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous" />
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/yourtracker_style.css">
+  <title>Your Tracker</title>
+  <script>
+    function handleClick(buttonId, presentValue) {
+      const email = "{{useremail.email}}"; // Get the email from the useremail object
+      let updatedValue;
+
+      if (buttonId === 'present1') {
+        updatedValue = parseInt(presentValue) + 1;
+      } else if (buttonId === 'absent1') {
+        updatedValue = parseInt(presentValue) + 1;
+      } else if (buttonId === 'present2') {
+        updatedValue = parseInt(presentValue) + 1;
+      } else if (buttonId === 'absent2') {
+        updatedValue = parseInt(presentValue) + 1;
+      } else if (buttonId === 'present3') {
+        updatedValue = parseInt(presentValue) + 1;
+      } else if (buttonId === 'absent3') {
+        updatedValue = parseInt(presentValue) + 1;
+      } else if (buttonId === 'present4') {
+        updatedValue = parseInt(presentValue) + 1;
+      } else if (buttonId === 'absent4') {
+        updatedValue = parseInt(presentValue) + 1;
+      } else if (buttonId === 'present5') {
+        updatedValue = parseInt(presentValue) + 1;
+      } else if (buttonId === 'absent5') {
+        updatedValue = parseInt(presentValue) + 1;
+      } else if (buttonId === 'present6') {
+        updatedValue = parseInt(presentValue) + 1;
+      } else if (buttonId === 'absent6') {
+        updatedValue = parseInt(presentValue) + 1;
+      }
+
+      // Send an HTTP POST request to the server to update the data
+      fetch('/update', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email, buttonId, updatedValue }),
+      })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          return response.json();
+        })
+        .then(data => {
+          // On successful update, redirect to the same page
+          const params = new URLSearchParams({
+            email: "{{useremail.email}}", // Pass other necessary data if needed
+            updatedData: JSON.stringify(data), // Pass the updated JSON data received from the server
+          });
+          window.location.href = "/backtrack?" + params.toString();
+        })
+        .catch(error => console.error('Error updating data:', error));
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////////////////
+
+    function generateReport(buttonId, presentValue, absentValue) {
+      //console.log(presentValue, absentValue)
+      let percentage = (((parseFloat(presentValue)) / (parseInt(presentValue) + parseInt(absentValue))) * 100).toFixed(2)
+      let x = parseFloat((parseInt(presentValue) - (3 * parseInt(absentValue))) / parseInt(3))
+      let must = (3 * parseInt(absentValue)) - parseInt(presentValue)
+      let miss = Math.floor(x);
+
+
+      if (buttonId === gr1 && percentage >= 75) {
+        document.getElementById("sr1").innerHTML = "Attendence Percentage: " + percentage + " %" + "<br>" + "You have " + miss + " safe sessions"
+      } else if (buttonId === gr1 && percentage < 75) {
+        document.getElementById("sr1").innerHTML = "Attendence Percentage: " + percentage + " %" + "<br>" + "You have to attend next " + must + " sessions"
+      } if (buttonId === gr2 && percentage >= 75) {
+        document.getElementById("sr2").innerHTML = "Attendence Percentage: " + percentage + " %" + "<br>" + "You have " + miss + " safe sessions"
+      } else if (buttonId === gr2 && percentage < 75) {
+        document.getElementById("sr2").innerHTML = "Attendence Percentage: " + percentage + " %" + "<br>" + "You have to attend next " + must + " sessions"
+      } if (buttonId === gr3 && percentage >= 75) {
+        document.getElementById("sr3").innerHTML = "Attendence Percentage: " + percentage + " %" + "<br>" + "You have " + miss + " safe sessions"
+      } else if (buttonId === gr3 && percentage < 75) {
+        document.getElementById("sr3").innerHTML = "Attendence Percentage: " + percentage + " %" + "<br>" + "You have to attend next " + must + " sessions"
+      } if (buttonId === gr4 && percentage >= 75) {
+        document.getElementById("sr4").innerHTML = "Attendence Percentage: " + percentage + " %" + "<br>" + "You have " + miss + " safe sessions"
+      } else if (buttonId === gr4 && percentage < 75) {
+        document.getElementById("sr4").innerHTML = "Attendence Percentage: " + percentage + " %" + "<br>" + "You have to attend next " + must + " sessions"
+      } if (buttonId === gr5 && percentage >= 75) {
+        document.getElementById("sr5").innerHTML = "Attendence Percentage: " + percentage + " %" + "<br>" + "You have " + miss + " safe sessions"
+      } else if (buttonId === gr5 && percentage < 75) {
+        document.getElementById("sr5").innerHTML = "Attendence Percentage: " + percentage + " %" + "<br>" + "You have to attend next " + must + " sessions"
+      } if (buttonId === gr6 && percentage >= 75) {
+        document.getElementById("sr6").innerHTML = "Attendence Percentage: " + percentage + " %" + "<br>" + "You have " + miss + " safe sessions"
+      } else if (buttonId === gr6 && percentage < 75) {
+        document.getElementById("sr6").innerHTML = "Attendence Percentage: " + percentage + " %" + "<br>" + "You have to attend next " + must + " sessions"
+      }
+    }
+  </script>
+
+</head>
+
+<body>
+  <nav class="nav">
+    <a href="/logout" style="text-decoration: none;">
+      <div class="nav-logo">
+        <p>MyAttendenceTracker</p>
+      </div>
+    </a>
+    <div class="nav-logo">
+      <p>Welcome - {{useremail.firstname}}</p>
+    </div>
+    <div class="nav-button">
+      <a href="/logout">
+        <button class="btn" id="registerBtn">Log Out</button>
+      </a>
+    </div>
+  </nav>
+  <br><br><br><br><br>
+  <table>
+    <tbody>
+      <tr>
+        <td class="sub" id="subject1">{{useremail.subject1}}</td>
+        <td><button id="present1" onclick="handleClick('present1', '{{useremail.present1}}')">Present :
+            {{useremail.present1}}</button></td>
+        <td class="abs"><button id="absent1" onclick="handleClick('absent1', '{{useremail.absent1}}')">Absent :
+            {{useremail.absent1}}</button></td>
+        <td class="gr"><button id="gr1"
+            onclick="generateReport(gr1, '{{useremail.present1}}', '{{useremail.absent1}}')">Generate
+            Report
+          </button></td>
+        <td class="sr" id="sr1"></td>
+      </tr>
+      <tr>
+        <td class="sub" id="subject2">{{useremail.subject2}}</td>
+        <td><button id="present2" onclick="handleClick('present2', '{{useremail.present2}}')">Present :
+            {{useremail.present2}}</button></td>
+        <td class="abs"><button id="absent2" onclick="handleClick('absent2', '{{useremail.absent2}}')">Absent :
+            {{useremail.absent2}}</button></td>
+        <td class="gr"><button id="gr2"
+            onclick="generateReport(gr2, '{{useremail.present2}}', '{{useremail.absent2}}')">Generate
+            Report
+          </button></td>
+        <td class="sr" id="sr2"></td>
+      </tr>
+      </tr>
+      <tr>
+        <td class="sub" id="subject3">{{useremail.subject3}}</td>
+        <td><button id="present3" onclick="handleClick('present3', '{{useremail.present3}}')">Present :
+            {{useremail.present3}}</button></td>
+        <td class="abs"><button id="absent3" onclick="handleClick('absent3', '{{useremail.absent3}}')">Absent :
+            {{useremail.absent3}}</button></td>
+        <td class="gr"><button id="gr3"
+            onclick="generateReport(gr3, '{{useremail.present3}}', '{{useremail.absent3}}')">Generate
+            Report
+          </button></td>
+        <td class="sr" id="sr3"></td>
+      </tr>
+      <tr>
+        <td class="sub" id="subject4">{{useremail.subject4}}</td>
+        <td><button id="present4" onclick="handleClick('present4', '{{useremail.present4}}')">Present :
+            {{useremail.present4}}</button></td>
+        <td class="abs"><button id="absent4" onclick="handleClick('absent4', '{{useremail.absent4}}')">Absent :
+            {{useremail.absent4}}</button></td>
+        <td class="gr"><button id="gr4"
+            onclick="generateReport(gr4, '{{useremail.present4}}', '{{useremail.absent4}}')">Generate
+            Report
+          </button></td>
+        <td class="sr" id="sr4"></td>
+      </tr>
+      <tr>
+        <td class="sub" id="subject5">{{useremail.subject5}}</td>
+        <td><button id="present5" onclick="handleClick('present5', '{{useremail.present5}}')">Present :
+            {{useremail.present5}}</button></td>
+        <td class="abs"><button id="absent5" onclick="handleClick('absent5', '{{useremail.absent5}}')">Absent :
+            {{useremail.absent5}}</button></td>
+        <td class="gr"><button id="gr5"
+            onclick="generateReport(gr5, '{{useremail.present5}}', '{{useremail.absent5}}')">Generate
+            Report
+          </button></td>
+        <td class="sr" id="sr5"></td>
+      </tr>
+      <tr>
+        <td class="sub" id="subject6">{{useremail.subject6}}</td>
+        <td><button id="present6" onclick="handleClick('present6', '{{useremail.present6}}')">Present :
+            {{useremail.present6}}</button></td>
+        <td class="abs"><button id="absent6" onclick="handleClick('absent6', '{{useremail.absent6}}')">Absent :
+            {{useremail.absent6}}</button></td>
+        <td class="gr"><button id="gr6"
+            onclick="generateReport(gr6, '{{useremail.present6}}', '{{useremail.absent6}}')">Generate
+            Report
+          </button></td>
+        <td class="sr" id="sr6"></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <footer id="footer" class="bg-dark text-white pt-5 pb-4">
+    <div class="row align-item-center">
+      <div class="col-md-7 col-lg-8 text-center footer-copyright">
+        <p>MyAttendanceTracker ©2023 All rights reserved</p>
+      </div>
+
+      <div class="col-md-5 col-lg-4">
+        <div class="text-center text-md-right">
+          <ul class="list-unstyled list-inline">
+            <li class="list-inline-item">
+              <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px">
+                <i class="fa-brands fa-facebook"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px">
+                <i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px">
+                <i class="fa-brands fa-instagram"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px">
+                <i class="fa-brands fa-linkedin"></i></a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#" class="btn-floating btn-sm text-white" style="font-size: 23px">
+                <i class="fa-solid fa-envelope"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
 </body>
+
 </html>
