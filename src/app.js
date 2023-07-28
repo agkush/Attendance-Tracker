@@ -137,14 +137,3 @@ app.listen(port, () => {
     console.log(`System is running on port no. ${port}`);
 })
 
-
-
-
-
-
-
-
-
-
-
-

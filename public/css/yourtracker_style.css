@@ -76,6 +76,24 @@ body {
   display: none;
 }
 
+@media (max-width: 767px) {
+  .nav {
+    height: 70px; /* Reduce the height for small screens */
+    line-height: 70px; /* Adjust the line height for small screens */
+    /* You can also reduce the padding and font sizes if needed */
+  }
+
+  .nav-logo p {
+    font-size: 20px; /* Reduce the font size for small screens */
+  }
+
+  .nav-button .btn {
+    width: 100px; /* Reduce the button width for small screens */
+    height: 30px; /* Reduce the button height for small screens */
+    font-size: 14px; /* Reduce the font size for small screens */
+  }
+}
+
 h1 {
   text-align: center;
   padding: 1rem;
