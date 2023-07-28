@@ -1,7 +1,7 @@
 # Attendance-Tracker
 Welcome to the MERM Attendance Tracking Web App! This application is a full stack Web App made by our team during Excalibur'23 Hackathons organized by Technobyte Society, NIT Kurukshetra. It is designed to help you efficiently track attendance for your events, meetings, and classes using the MERM stack (MongoDB, Express, Node.js).
 
-Demo Link -> 
+**Demo Link -> https://my-attendance-tracker-agkush.vercel.app/**
 
 ## Features
 * User Authentication: Secure sign-up and login functionality for attendees.
